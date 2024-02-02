@@ -7,7 +7,7 @@
 </head>
 <body>
     
-    <div style = "height: 100vh; width: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center">
+    <div style = "height: 100vh; width: 100vw; display: flex; flex-direction: column; justify-content: center; align-items: center">
         <h1>Test</h1>
         <form action="" method="get" class="form-example">
             <div class="form-example">
@@ -19,8 +19,26 @@
               <input type="email" name="email" id="email" required />
             </div>
             <div class="form-example">
+                <legend>Do you agree to the terms?</legend>
+                <label><input type="radio" name="radio" value="yes" /> Yes</label>
+                <label><input type="radio" name="radio" value="no" /> No</label>
+            </div>
+            <div class="form-example"></div>
+                <label for="pet-select">Choose a pet:</label>
+                <select name="pets" id="pet-select">
+                    <option value="">--Please choose an option--</option>
+                    <option value="dog">Dog</option>
+                    <option value="cat">Cat</option>
+                    <option value="hamster">Hamster</option>
+                    <option value="parrot">Parrot</option>
+                    <option value="spider">Spider</option>
+                    <option value="goldfish">Goldfish</option>
+                </select>
+            </div>
+            <div class="form-example">
               <input type="submit" value="Subscribe!" />
             </div>
+            
           </form>
     </div>
 </body>
