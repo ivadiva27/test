@@ -1,82 +1,81 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Test</title>
+    <meta name="description" content="contact form example">
+  <title>Contact Form Example</title>
 </head>
-<body>
-    <div style = "height: 100vh; width: 100vw; display: flex; flex-direction: column; justify-content: center; align-items: center">
-        <h1>Test</h1>
-        <form action="" method="get" class="form-example">
-            <div class="form-example">
-              <label for="name">Enter your name: </label>
-              <input type="text" name="name" id="name" required />
-            </div>
-            <div class="form-example">
-              <label for="email">Enter your email: </label>
-              <input type="email" name="email" id="email" required />
-            </div>
-            <div class="form-example">
-                <legend>Do you agree to the terms?</legend>
-                <label><input type="radio" name="radio" value="yes" /> Yes</label>
-                <label><input type="radio" name="radio" value="no" /> No</label>
-            </div>
-            <div class="form-example"></div>
-                <label for="pet-select">Choose a pet:</label>
-                <select name="pets" id="pet-select">
-                    <option value="">--Please choose an option--</option>
-                    <option value="dog">Dog</option>
-                    <option value="cat">Cat</option>
-                    <option value="hamster">Hamster</option>
-                    <option value="parrot">Parrot</option>
-                    <option value="spider">Spider</option>
-                    <option value="goldfish">Goldfish</option>
-                </select>
-            <div class="form-example">
-                <input type="submit" value="Subscribe!" />
-            </div> 
-        </form>
 
-        <form id="rsvp-form" class="rsvp-form" action="" method="POST">
-            <div class="row">
-                <div class="col-md-6 col-sm-6">
-                    <div class="form-input-group">
-                        <i class="fa fa-envelope"></i>
-                        <input type="email" name="email" class="" placeholder="Your email" required>
-                    </div>
-                </div>
-                <div class="col-md-6 col-sm-6">
-                    <div class="form-input-group">
-                        <i class="fa fa-user"></i>
-                        <input name="name" class="" placeholder="Your name" required>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-6 col-sm-6">
-                    <div class="form-input-group">
-                        <i class="fa fa-users"></i>
-                        <input type="number" name="extras" class="" min="0" max="4" placeholder="Husband/Wife or kids" required>
-                    </div>
-                </div>
-                <div class="col-md-6 col-sm-6">
-                    <div class="form-input-group">
-                        <i class="fa fa-key"></i>
-                        <input type="number" name="invite_code" id="invite_code" class="" min="0" placeholder="Invite code" required>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12" id="alert-wrapper"></div>
-            </div>
-            <button class="btn-fill rsvp-btn">
-                Yes, that's me!
-            </button>
-        </form>
+<body>
+  <h2 class="content-head is-center">Contact Us!</h2>
+  <aside>
+       <p>
+           We would <em>love</em> to hear from you! </p>
+           <p>Please use the <b><em>Contact Form</em></b>
+           to send us a message.
+       </p>
+   </aside>
+
+<!-- START HERE -->
+   <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css">
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+   <!-- Style The Contact Form How Ever You Prefer -->
+   <link rel="stylesheet" href="style.css">
+
+  <form class="gform pure-form pure-form-stacked" method="POST" data-email="example@email.net"
+  action="https://script.google.com/macros/s/AKfycbz_vsFnojeXXFZHsGuWAz_TvwAJWtq7KVk-Lrsk5yoevedEF7pmkPxIODIxOdp-diP0eg/exec">
+    <!-- change the form action to your script url -->
+
+    <div class="form-elements">
+      <fieldset class="pure-group">
+        <label for="name">Name: </label>
+        <input id="name" name="name" placeholder="What your Mom calls you" />
+      </fieldset>
+
+      <fieldset class="pure-group">
+        <label for="message">Message: </label>
+        <textarea id="message" name="message" rows="10"
+        placeholder="Tell us what's on your mind..."></textarea>
+      </fieldset>
+
+      <fieldset class="pure-group">
+        <label for="email"><em>Your</em> Email Address:</label>
+        <input id="email" name="email" type="email" value=""
+        required placeholder="your.name@email.com"/>
+      </fieldset>
+
+      <fieldset class="pure-group">
+        <label for="color">Favourite Color: </label>
+        <input id="color" name="color" placeholder="green" />
+      </fieldset>
+
+      <fieldset class="pure-group honeypot-field">
+        <label for="honeypot">To help avoid spam, utilize a Honeypot technique with a hidden text field; must be empty to submit the form! Otherwise, we assume the user is a spam bot.</label>
+        <input id="honeypot" type="text" name="honeypot" value="" />
+      </fieldset>
+
+      <button class="button-success pure-button button-xlarge">
+        <i class="fa fa-paper-plane"></i>&nbsp;Send</button>
     </div>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>  <!-- jQuery, immer direkt vor javascript script tag -->
-    <script src="index.js" charset="utf-8"></script>
+    <!-- Customise the Thankyou Message People See when they submit the form: -->
+    <div class="thankyou_message" style="display:none;">
+      <h2><em>Thanks</em> for contacting us!
+        We will get back to you soon!</h2>
+    </div>
+
+    <div style="display:none" class="thankyou_message">
+        <!-- You can customize the thankyou message by editing the code below -->
+        <h2><em>Thanks</em> for contacting us! We will get back to you soon!
+        </h2>
+    </div>
+
+  </form>
+
+  <!-- Submit the Form to Google Using "AJAX" -->
+  <script data-cfasync="false" type="text/javascript" src="form-submission-handler.js"></script>
+<!-- END -->
+
 </body>
 </html>
